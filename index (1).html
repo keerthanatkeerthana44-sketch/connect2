@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CONNECT: Understand your feelings. Find your next small step." />
+  <title>CONNECT</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a href="#/" class="skip-link" id="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="#/" class="brand" aria-label="CONNECT home">
+        <span class="brand__mark" aria-hidden="true">◍</span>
+        <span class="brand__name">CONNECT</span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="#/" class="nav__link" data-nav="/">Home</a>
+        <a href="#/mood" class="nav__link" data-nav="/mood">My Mood</a>
+        <a href="#/insights" class="nav__link" data-nav="/insights">Insights</a>
+        <a href="#/relax" class="nav__link" data-nav="/relax">Relax</a>
+      </nav>
+      <a href="#/urgent-help" class="btn btn--urgent">I NEED URGENT HELP</a>
+    </div>
+  </header>
+
+  <main id="main" class="main" tabindex="-1">
+
+    <!-- HOME -->
+    <section id="page-home" class="page-section page landing" aria-label="Home">
+      <div class="floaters" aria-hidden="true">
+        <span class="floater">✨</span>
+        <span class="floater">🌿</span>
+        <span class="floater">💜</span>
+        <span class="floater">☁️</span>
+        <span class="floater">🌈</span>
+        <span class="floater">🫧</span>
+      </div>
+
+      <section class="hero">
+        <p class="brand-banner">CONNECT</p>
+        <p class="brand-tagline">Understand your feelings. Find your next small step.</p>
+        <h1 class="hero__title">How are you feeling today?</h1>
+        <p class="hero__text">Choose your mood, explore a little, and find your happy moment.</p>
+      </section>
+
+      <section class="mood-grid" id="mood-grid" aria-label="Choose your mood"></section>
+
+      <section class="benefits" aria-labelledby="benefits-heading">
+        <h2 id="benefits-heading" class="section-title">Small steps, at your own pace</h2>
+        <div class="benefits__grid">
+          <article class="card benefit">
+            <h3>Games for your mood</h3>
+            <p>Each feeling opens a few small activities. You choose what to try.</p>
+          </article>
+          <article class="card benefit">
+            <h3>Optional check-ins</h3>
+            <p>Save how you feel to My Mood when it helps. Skip it whenever you like.</p>
+          </article>
+          <article class="card benefit">
+            <h3>No pressure</h3>
+            <p>Nothing is scored, and there is no streak to keep up.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card support-strip" aria-label="Urgent help">
+        <p>
+          Going through something difficult right now? You don't have to face it alone.
+          <a href="#/urgent-help">View helplines in Tamil Nadu</a>
+        </p>
+      </section>
+
+      <p class="disclaimer">
+        CONNECT is a self-guided wellness tool. It is not a diagnosis or treatment and does not replace
+        professional care. Games are for play and reflection and cannot cure or guarantee any mood change.
+      </p>
+    </section>
+
+    <!-- EMOTION SCREEN -->
+    <section id="page-feel" class="page-section page feel-page" aria-label="Your mood" hidden>
+      <div id="feel-root"></div>
+    </section>
+
+    <!-- ACTIVITY RECOMMENDATIONS -->
+    <section id="page-activities" class="page-section page" aria-label="Activities" hidden>
+      <div id="activities-root"></div>
+    </section>
+
+    <!-- GUIDED ACTIVITY -->
+    <section id="page-activity" class="page-section page" aria-label="Activity" hidden>
+      <div id="activity-root"></div>
+    </section>
+
+    <!-- MY MOOD -->
+    <section id="page-mood" class="page-section page" aria-label="My Mood" hidden>
+      <header class="page-header">
+        <p class="eyebrow">Personal reflection</p>
+        <h1>My Mood</h1>
+        <p class="section-subtitle">
+          This is a personal reflection tool, not a clinical assessment. Your check-ins are stored only in this browser.
+        </p>
+      </header>
+      <div id="mood-root"></div>
+    </section>
+
+    <!-- MY INSIGHTS -->
+    <section id="page-insights" class="page-section page" aria-label="My Insights" hidden>
+      <header class="page-header">
+        <p class="eyebrow">Reflections</p>
+        <h1>My Insights</h1>
+        <p class="section-subtitle">
+          These reflections are based only on what you have recorded yourself. They are not a diagnosis.
+        </p>
+      </header>
+      <div id="insights-root"></div>
+    </section>
+
+    <!-- RELAX -->
+    <section id="page-relax" class="page-section page" aria-label="Relax" hidden>
+      <header class="page-header">
+        <p class="eyebrow">Take a small break</p>
+        <h1>Relax</h1>
+        <p class="section-subtitle">
+          Little activities to play with when you need a moment. Nothing here is scored or required.
+        </p>
+      </header>
+
+      <div class="tabs" role="tablist" aria-label="Relax activities" id="relax-tabs">
+        <button type="button" role="tab" id="tab-breathing" class="tab is-active" aria-selected="true" aria-controls="relax-panel" data-tab="breathing">Breathing bubble</button>
+        <button type="button" role="tab" id="tab-pop" class="tab" aria-selected="false" aria-controls="relax-panel" data-tab="pop">Pop the bubbles</button>
+        <button type="button" role="tab" id="tab-garden" class="tab" aria-selected="false" aria-controls="relax-panel" data-tab="garden">Virtual garden</button>
+        <button type="button" role="tab" id="tab-color" class="tab" aria-selected="false" aria-controls="relax-panel" data-tab="color">Colour game</button>
+        <button type="button" role="tab" id="tab-face" class="tab" aria-selected="false" aria-controls="relax-panel" data-tab="face">Mood face</button>
+        <button type="button" role="tab" id="tab-challenge" class="tab" aria-selected="false" aria-controls="relax-panel" data-tab="challenge">60-second pause</button>
+      </div>
+
+      <section class="card relax-panel" id="relax-panel" role="tabpanel" aria-labelledby="tab-breathing"></section>
+
+      <p class="muted">
+        Feeling heavy rather than playful? <a href="#/urgent-help">Get support or a helpline number</a>.
+      </p>
+    </section>
+
+    <!-- URGENT HELP -->
+    <section id="page-urgent" class="page-section page page--urgent" aria-label="Urgent help" hidden>
+      <header class="urgent-hero">
+        <h1>You don't have to face this moment alone.</h1>
+        <p>
+          If you're going through a difficult moment, support is available. You can reach out to a helpline
+          or emergency service for help.
+        </p>
+      </header>
+
+      <div class="card urgent-disclaimer" role="note">
+        <p>
+          CONNECT is not an emergency service. This website cannot contact emergency services on your behalf or
+          guarantee that someone will respond. If you are in immediate danger, contact emergency services directly.
+        </p>
+      </div>
+
+      <section aria-labelledby="helplines-heading">
+        <h2 id="helplines-heading" class="section-title">Mental Health Helplines in Tamil Nadu</h2>
+        <div class="helpline-grid">
+          <article class="helpline-card helpline-card--mental-health">
+            <p class="helpline-card__type">Government of India mental health helpline</p>
+            <h3 class="helpline-card__name">TELE-MANAS</h3>
+            <p class="helpline-card__number">14416</p>
+            <p class="helpline-card__purpose">Mental health support for emotional distress, anxiety, depression, suicidal thoughts, and related concerns.</p>
+            <p class="helpline-card__avail">Free, 24/7 support, subject to official service confirmation.</p>
+            <a href="tel:14416" class="btn btn--call">Call 14416</a>
+          </article>
+
+          <article class="helpline-card helpline-card--ambulance">
+            <p class="helpline-card__type">Emergency ambulance service</p>
+            <h3 class="helpline-card__name">Emergency Ambulance</h3>
+            <p class="helpline-card__number">108</p>
+            <p class="helpline-card__purpose">Immediate medical emergencies or situations requiring urgent medical assistance.</p>
+            <a href="tel:108" class="btn btn--call">Call 108</a>
+          </article>
+
+          <article class="helpline-card helpline-card--emergency">
+            <p class="helpline-card__type">Emergency response service</p>
+            <h3 class="helpline-card__name">Emergency Response</h3>
+            <p class="helpline-card__number">112</p>
+            <p class="helpline-card__purpose">Immediate safety emergencies or situations involving imminent danger.</p>
+            <a href="tel:112" class="btn btn--call">Call 112</a>
+          </article>
+
+          <article class="helpline-card helpline-card--state-health">
+            <p class="helpline-card__type">Tamil Nadu state health helpline</p>
+            <h3 class="helpline-card__name">Tamil Nadu Health Helpline</h3>
+            <p class="helpline-card__number">104</p>
+            <p class="helpline-card__purpose">Health-related guidance and available counselling support, including stress-related concerns.</p>
+            <a href="tel:104" class="btn btn--call">Call 104</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="card urgent-options" aria-labelledby="options-heading">
+        <h2 id="options-heading" class="section-title">Other ways to get support</h2>
+        <ul class="plain-list">
+          <li>Reach out to a person you trust and tell them how you feel. You don't need the right words.</li>
+          <li>
+            Optional: a short <a href="#/activities/anxious">grounding exercise</a> can help you settle.
+            It is here only if you want it. Please call a helpline or emergency service first if you feel unsafe.
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <!-- NOT FOUND -->
+    <section id="page-notfound" class="page-section page" aria-label="Page not found" hidden>
+      <div class="card">
+        <h1>This page isn't here.</h1>
+        <p>Nothing to worry about. You can head back home.</p>
+        <a href="#/" class="btn btn--primary">Return home</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      <strong>CONNECT</strong> supports everyday emotional well-being through self-guided activities. It is not a
+      diagnostic tool, does not replace professional mental health care, and is not a substitute for emergency
+      services.
+    </p>
+  </footer>
+</body>
+</html>
